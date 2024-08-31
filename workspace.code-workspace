@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "sample-next-auth-20240831",
+			"path": "."
+		},
+		{
+			"name": "web",
+			"path": "apps/web"
+		}
+	]
+}
