@@ -1,0 +1,25 @@
+{
+  "name": "sample-next-auth-20240831",
+
+  /** docker compose settings */
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+
+  /** main container settings */
+  "features": {},
+  "forwardPorts": [3000, 4000],
+  "remoteUser": "root",
+
+  /** lifecycle hooks */
+  "initializeCommand": "bash .devcontainer/hooks/initialize.sh",
+  "postCreateCommand": "bash .devcontainer/hooks/post-create.sh",
+
+  /** editor settings */
+  "customizations": {
+    "vscode": {
+      "extensions": [],
+      "settings": {}
+    }
+  }
+}

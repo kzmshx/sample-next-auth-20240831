@@ -1,0 +1,15 @@
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/javascript-node:20-bookworm
+    volumes:
+      - ..:/workspace:cached
+      - app-pnpm-store:/workspace/.pnpm-store
+    command: sleep infinity
+    networks:
+      - net
+
+volumes:
+  app-pnpm-store:
+
+networks:
+  net:
