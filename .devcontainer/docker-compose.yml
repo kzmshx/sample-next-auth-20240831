@@ -3,6 +3,8 @@ services:
     image: mcr.microsoft.com/devcontainers/javascript-node:20-bookworm
     volumes:
       - ..:/workspace:cached
+      - ./app/root/.zsh_history:/root/.zsh_history
+      - ./app/root/.zshrc:/root/.zshrc
       - app-pnpm-store:/workspace/.pnpm-store
     command: sleep infinity
     networks:

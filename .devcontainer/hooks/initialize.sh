@@ -1,4 +1,3 @@
-#!/bin/bash
 # --------------------------------------------------
 # Initialize script
 #
@@ -14,4 +13,6 @@ function expand_tmpl() {
   fi
 }
 
-expand_tmpl .devcontainer/app/.bash_profile.tmpl
+expand_tmpl .devcontainer/app/root/.zshrc.tmpl
+
+touch .devcontainer/app/root/.zsh_history

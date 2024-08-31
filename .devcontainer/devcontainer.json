@@ -1,37 +1,50 @@
 {
-  "name": "sample-next-auth-20240831",
+	"name": "sample-next-auth-20240831",
 
-  /** docker compose settings */
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "app",
-  "workspaceFolder": "/workspace",
+	/** docker compose settings */
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
 
-  /** main container settings */
-  "features": {},
-  "forwardPorts": [3000, 4000],
-  "remoteUser": "root",
+	/** main container settings */
+	"features": {},
+	"forwardPorts": [3000, 4000],
+	"remoteUser": "root",
 
-  /** lifecycle hooks */
-  "initializeCommand": "bash .devcontainer/hooks/initialize.sh",
-  "postCreateCommand": "bash .devcontainer/hooks/post-create.sh",
+	/** lifecycle hooks */
+	"initializeCommand": "zsh .devcontainer/hooks/initialize.sh",
+	"postCreateCommand": "zsh .devcontainer/hooks/post-create.sh",
 
-  /** editor settings */
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "dotenv.dotenv-vscode",
-        "esbenp.prettier-vscode",
-        "folke.vscode-monorepo-workspace",
-        "github.copilot-chat",
-        "github.copilot",
-        "github.vscode-github-actions",
-        "me-dutour-mathieu.vscode-github-actions",
-        "ms-azuretools.vscode-docker",
-        "prisma.prisma",
-        "vitest.explorer",
-        "yoavbls.pretty-ts-errors"
-      ],
-      "settings": {}
-    }
-  }
+	/** editor settings */
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"biomejs.biome",
+				"dotenv.dotenv-vscode",
+				"folke.vscode-monorepo-workspace",
+				"github.copilot-chat",
+				"github.copilot",
+				"github.vscode-github-actions",
+				"me-dutour-mathieu.vscode-github-actions",
+				"ms-azuretools.vscode-docker",
+				"prisma.prisma",
+				"vitest.explorer",
+				"yoavbls.pretty-ts-errors"
+			],
+			"settings": {
+				"editor.codeActionsOnSave": {
+					"quickfix.biome": "explicit",
+					"source.organizeImports.biome": "explicit"
+				},
+				"editor.defaultFormatter": "biomejs.biome",
+				"editor.formatOnSave": true,
+				"editor.linkedEditing": true,
+				"files.associations": {
+					".zshrc": "shellscript",
+					".zshrc.tmpl": "shellscript"
+				},
+				"terminal.integrated.defaultProfile.linux": "zsh"
+			}
+		}
+	}
 }
