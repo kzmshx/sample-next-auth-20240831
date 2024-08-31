@@ -18,7 +18,19 @@
   /** editor settings */
   "customizations": {
     "vscode": {
-      "extensions": [],
+      "extensions": [
+        "dotenv.dotenv-vscode",
+        "esbenp.prettier-vscode",
+        "folke.vscode-monorepo-workspace",
+        "github.copilot-chat",
+        "github.copilot",
+        "github.vscode-github-actions",
+        "me-dutour-mathieu.vscode-github-actions",
+        "ms-azuretools.vscode-docker",
+        "prisma.prisma",
+        "vitest.explorer",
+        "yoavbls.pretty-ts-errors"
+      ],
       "settings": {}
     }
   }
