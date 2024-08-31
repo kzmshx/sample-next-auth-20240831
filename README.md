@@ -1,81 +1,43 @@
-# Turborepo starter
+# sample-next-auth-20240831
 
-This is an official starter Turborepo.
+以下の技術を使って GitHub 認証を実装してみた。
 
-## Using this example
+- Corepack
+- Turborepo
+- Next.js
+- NextAuth.js
+- Biome
 
-Run the following command:
+---
 
-```sh
-npx create-turbo@latest
-```
+- Corepack での pnpm 管理を試したい
+- NextAuth.js を試したい
+- Turborepo/VSCode Workspace で Biome が使えるか試したい
 
-## What's inside?
+あたりが動機だったが試せてよかった。
 
-This Turborepo includes the following packages/apps:
+Dev Container でローカルの事情に引っ張られることもなくなってきたので、今後は困ったことがない限り Corepack 使っていく。
 
-### Apps and Packages
+Biome は ESLint/Prettier に比べて革命的に設定が楽だし管理用ファイルも減るのでとてもいい。
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+NextAuth.js は使いやすそう、まだ「使いやすそう」というところまでしか触ってないけど。次は WebAuthn 試したい。
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+---
 
-### Utilities
+主目的ではないが
 
-This Turborepo has some additional tools already setup for you:
+- Next.js 15 で設定ファイルを TS で書ける（next.config.ts）ようになることに気付いて試せた
+- Zod で Next.js で環境変数を型安全にする方法を試せた
+- Dev Container のようなプロジェクトごとのエディタ設定に慣れて、VSCode から不要なユーザーレベルの設定を削除できた
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+など副次的なメリットもあった。
 
-### Build
+---
 
-To build all apps and packages, run the following command:
+惜しい点としては
 
-```
-cd my-turborepo
-pnpm build
-```
+- 本当は Auth.js （next-auth@beta）を使いたかったのだが、最近のアップデート？でランタイムエラーのイシューが上がっていて使えなかった
+- Biome だと Tailwind CSS 周りのサポートは Prettier にまだ追いついていない
+- Next.js 15, React 19 を canary で使ったが特に新しい機能などは試せていない
 
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+などがあった。次の機会にまた試す。
